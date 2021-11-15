@@ -15,7 +15,7 @@ public class SwaggerConfig {
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
-                .paths(PathSelectors.regex("/client.*"))
+                //.paths(PathSelectors.regex("/client.*"))
                 .build();
     }
 }

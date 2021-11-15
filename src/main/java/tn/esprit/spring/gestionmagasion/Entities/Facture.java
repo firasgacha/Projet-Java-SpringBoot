@@ -29,7 +29,7 @@ public class Facture implements Serializable {
     @JoinColumn(name = "idFacture")
     private List<DetailFacture> detailFactures;
 
-    public Facture() {}
+    public Facture() {detailFactures = new ArrayList<>();}
 
 
     public Facture(Long id,int i, int i1, Date date, boolean b) {

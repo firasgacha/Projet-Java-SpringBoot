@@ -23,7 +23,8 @@ public class ClientController  {
 
     @ApiOperation(value = "Ajouter un Client")
     @PostMapping("add")
-    public Client add(@RequestBody Client client) {
+    public Client add(@RequestBody Client client)
+    {
         return clientService.add(client);
     }
 
