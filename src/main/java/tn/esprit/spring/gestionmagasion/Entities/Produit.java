@@ -41,6 +41,21 @@ public class Produit implements Serializable {
         fournisseurs = new ArrayList<>();
     }
 
+    public Produit(Long idProduit, String code, String libelle, float prixUnitaire, DetailFacture detailFacture, Stock stock, Rayon rayon, DetailProduit detailProduit, List<Fournisseur> fournisseurs) {
+        this.idProduit = idProduit;
+        this.code = code;
+        this.libelle = libelle;
+        this.prixUnitaire = prixUnitaire;
+        this.detailFacture = detailFacture;
+        this.stock = stock;
+        this.rayon = rayon;
+        this.detailProduit = detailProduit;
+        this.fournisseurs = fournisseurs;
+    }
+
+    public Produit(String p123, String s, float v, DetailProduit detailProduit, Rayon rayon1, Stock stock1) {
+    }
+
     public Long getIdProduit() {
         return idProduit;
     }
@@ -124,7 +139,7 @@ public class Produit implements Serializable {
                 ", stock=" + stock +
                 ", rayon=" + rayon +
                 ", detailProduit=" + detailProduit +
-                ", Fournisseurs=" + fournisseurs +
+                ", fournisseurs=" + fournisseurs +
                 '}';
     }
 }

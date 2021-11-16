@@ -23,6 +23,17 @@ public class Stock implements Serializable {
         produits = new ArrayList<>();
     }
 
+    public Stock(Long idStock, int qte, int qteMin, String libelleStock, List<Produit> produits) {
+        this.idStock = idStock;
+        this.qte = qte;
+        this.qteMin = qteMin;
+        this.libelleStock = libelleStock;
+        this.produits = produits;
+    }
+
+    public Stock(int i, int i1, String s) {
+    }
+
     public Long getIdStock() {
         return idStock;
     }

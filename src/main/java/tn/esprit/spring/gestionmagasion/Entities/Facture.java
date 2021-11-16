@@ -40,6 +40,12 @@ public class Facture implements Serializable {
         this.active=b;
     }
 
+    public Facture(float v, float v1, Client client1) {
+        this.montantFacture = v;
+        this.montantRemise = v1;
+        this.client = client1;
+    }
+
 
     public Long getIdFacture() {
         return idFacture;

@@ -22,6 +22,9 @@ public class Rayon  implements Serializable {
         produits = new ArrayList<>();
     }
 
+    public Rayon(String ra1, String s) {
+    }
+
     public Long getIdRayon() {
         return idRayon;
     }

@@ -22,6 +22,9 @@ public class DetailProduit implements Serializable {
     public DetailProduit() {
     }
 
+    public DetailProduit(Date date, Object o, tn.esprit.spring.gestionmagasion.Entities.CategorieProduit alimentaire) {
+    }
+
     public Long getIdDetailProduit() {
         return idDetailProduit;
     }

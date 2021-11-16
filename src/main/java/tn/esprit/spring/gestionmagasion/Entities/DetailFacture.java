@@ -30,6 +30,9 @@ public class DetailFacture implements Serializable {
         produits = new ArrayList<>();
     }
 
+    public DetailFacture(int i, float v, int i1, float v1, Facture facture1, Produit produit1) {
+    }
+
     public Long getIdDetailFacture() {
         return idDetailFacture;
     }
