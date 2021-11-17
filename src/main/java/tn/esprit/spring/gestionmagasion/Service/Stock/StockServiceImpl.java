@@ -1,6 +1,7 @@
 package tn.esprit.spring.gestionmagasion.Service.Stock;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.gestionmagasion.Entities.Stock;
 import tn.esprit.spring.gestionmagasion.Repository.StockRepository;
@@ -20,6 +21,10 @@ public class StockServiceImpl implements StockService{
 
     @Override
     public Stock update(Stock stock, Long id) {
+        if(stockRepository.findById(id).isPresent()){
+            stockRepository.save(stock);
+            return stock;
+        }
         return null;
     }
 
@@ -37,5 +42,15 @@ public class StockServiceImpl implements StockService{
     @Override
     public Stock findById(Long id) {
         return stockRepository.getById(id);
+    }
+
+    @Override
+    @Scheduled(cron = "00 22 * * * *" )
+    public void retrieveStatusStock() {
+        stockRepository.findAll().forEach(stock -> {
+            if(stock.getQte()<stock.getQteMin()){
+                System.out.println(stock.getProduits().toString());
+            }
+        });
     }
 }

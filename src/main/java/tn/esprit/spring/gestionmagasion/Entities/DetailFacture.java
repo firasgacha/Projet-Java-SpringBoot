@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Entity
 public class DetailFacture implements Serializable {
@@ -79,5 +78,26 @@ public class DetailFacture implements Serializable {
 
     public void setFacture(Facture facture) {
         this.facture = facture;
+    }
+
+    public List<Produit> getProduits() {
+        return produits;
+    }
+
+    public void setProduits(List<Produit> produits) {
+        this.produits = produits;
+    }
+
+    @Override
+    public String toString() {
+        return "DetailFacture{" +
+                "idDetailFacture=" + idDetailFacture +
+                ", qte=" + qte +
+                ", prixtotal=" + prixtotal +
+                ", pourcentageRemise=" + pourcentageRemise +
+                ", montantRemise=" + montantRemise +
+                ", facture=" + facture +
+                ", produits=" + produits +
+                '}';
     }
 }

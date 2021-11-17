@@ -20,10 +20,14 @@ public class DetailProduitServiceImpl implements DetailProduitService{
 
     @Override
     public DetailProduit update(DetailProduit detailProduit, Long id) {
+        if (detailProduitRepository.findById(id).isPresent()){
+            detailProduitRepository.save(detailProduit);
+            return detailProduit;
+        }
         return null;
     }
 
-    @Override
+    /*@Override
     public void delete(long id) {
         detailProduitRepository.deleteById(id);
     }
@@ -37,5 +41,5 @@ public class DetailProduitServiceImpl implements DetailProduitService{
     @Override
     public DetailProduit findById(Long id) {
         return detailProduitRepository.getById(id);
-    }
+    }*/
 }

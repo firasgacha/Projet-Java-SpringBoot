@@ -31,7 +31,6 @@ public class ClientServiceImpl implements ClientService{
     public Client update(Client client, Long id) {
         Optional<Client> c = clientRepository.findById(id);
         if (c.isPresent()) {
-            client.setIdClient(id);
             clientRepository.save(client);
             return client;
         } else return null;

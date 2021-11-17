@@ -1,5 +1,6 @@
 package tn.esprit.spring.gestionmagasion.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -35,6 +36,7 @@ public class Client implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "idClient")
+    @JsonIgnore
     private List<Facture> factures;
 
     public Client() {

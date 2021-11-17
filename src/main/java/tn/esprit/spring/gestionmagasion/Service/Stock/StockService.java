@@ -10,4 +10,5 @@ public interface StockService {
     void delete(long id);
     List<Stock> findAll();
     Stock findById(Long id);
+    void retrieveStatusStock();
 }

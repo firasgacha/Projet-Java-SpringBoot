@@ -7,7 +7,7 @@ import java.util.List;
 public interface DetailProduitService {
     DetailProduit add(DetailProduit detailProduit);
     DetailProduit update(DetailProduit detailProduit, Long id);
-    void delete(long id);
+    /*void delete(long id);
     List<DetailProduit> findAll();
-    DetailProduit findById(Long id);
+    DetailProduit findById(Long id);*/
 }

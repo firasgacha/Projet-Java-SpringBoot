@@ -14,21 +14,27 @@ public class DetailFactureServiceImpl implements DetailFactureService{
     private DetailFactureRepository detailFactureRepository;
 
     @Override
-    public DetailFacture add(DetailFacture detailFacture) {
+    public DetailFacture add(DetailFacture detailFacture)
+    {
         return detailFactureRepository.save(detailFacture);
     }
 
-    @Override
+    /*@Override
     public DetailFacture update(DetailFacture detailFacture, Long id) {
+        if (detailFactureRepository.findById(id).isPresent())
+        {
+            detailFactureRepository.save(detailFacture);
+            return detailFacture;
+        }
         return null;
-    }
+    }*/
 
     @Override
     public void delete(long id) {
         detailFactureRepository.deleteById(id);
     }
 
-    @Override
+    /*@Override
     public List<DetailFacture> findAll() {
         return detailFactureRepository.findAll();
     }
@@ -37,5 +43,5 @@ public class DetailFactureServiceImpl implements DetailFactureService{
     @Override
     public DetailFacture findById(Long id) {
         return detailFactureRepository.getById(id);
-    }
+    }*/
 }

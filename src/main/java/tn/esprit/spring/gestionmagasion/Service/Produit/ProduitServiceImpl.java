@@ -2,6 +2,7 @@ package tn.esprit.spring.gestionmagasion.Service.Produit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tn.esprit.spring.gestionmagasion.Entities.DetailFacture;
 import tn.esprit.spring.gestionmagasion.Entities.Produit;
 import tn.esprit.spring.gestionmagasion.Repository.ProduitRepository;
 import tn.esprit.spring.gestionmagasion.Repository.StockRepository;
@@ -9,6 +10,7 @@ import tn.esprit.spring.gestionmagasion.Service.DetailFacture.DetailFactureServi
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class ProduitServiceImpl implements ProduitService{
@@ -24,6 +26,10 @@ public class ProduitServiceImpl implements ProduitService{
 
     @Override
     public Produit update(Produit produit, Long id) {
+        if(produitRepository.findById(id).isPresent()){
+            produitRepository.save(produit);
+            return produit;
+        }
         return null;
     }
 
@@ -53,8 +59,6 @@ public class ProduitServiceImpl implements ProduitService{
     @Override
     public float getRevenuBrutProduit(Long idProduit, Date startDate, Date endDate) {
         Produit p = produitRepository.getById(idProduit);
-        float prixU = p.getPrixUnitaire();
-        int qte = p.getStock().getQte();
-        return prixU * qte;
+        return p.getDetailFacture().getQte()*p.getPrixUnitaire();
     }
 }

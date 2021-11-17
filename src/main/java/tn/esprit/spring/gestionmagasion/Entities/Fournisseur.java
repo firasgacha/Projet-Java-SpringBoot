@@ -1,5 +1,7 @@
 package tn.esprit.spring.gestionmagasion.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,9 +16,11 @@ public class Fournisseur  implements Serializable {
     private String libelle;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "Produit_Fournisseur", joinColumns = {
+    @JoinTable(name = "Produit_Fournisseur", joinColumns =
+            {
             @JoinColumn(name = "idFournisseur") }, inverseJoinColumns = {
-            @JoinColumn(name = "idProduit") })
+            @JoinColumn(name = "idProduit")})
+    @JsonIgnore
     private List<Produit> produits;
 
     public Fournisseur() {

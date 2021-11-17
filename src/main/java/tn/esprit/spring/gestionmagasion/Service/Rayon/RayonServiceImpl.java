@@ -20,6 +20,10 @@ public class RayonServiceImpl implements RayonService{
 
     @Override
     public Rayon update(Rayon rayon, Long id) {
+        if (rayonRepository.findById(id).isPresent()){
+            rayonRepository.save(rayon);
+            return rayon;
+        }
         return null;
     }
 

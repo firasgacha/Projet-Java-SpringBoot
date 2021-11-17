@@ -15,12 +15,12 @@ public class FactureTests {
     @Autowired
     private FactureService factureservice;
 
-    @Test
+    /*@Test
     void AddFacture(){
         Date date = new Date("13/02/1998");
         Facture facture = new Facture(5L,600,800,date,true);
         factureservice.add(facture);
-    }
+    }*/
     @Test
     void DeleteFacture(){
         factureservice.delete(1L);

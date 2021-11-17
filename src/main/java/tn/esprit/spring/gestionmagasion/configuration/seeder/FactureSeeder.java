@@ -25,9 +25,9 @@ public class FactureSeeder {
         facture1 = new Facture(15F,50F, clientSeeder.client1);
         facture2 = new Facture(3F,30F,clientSeeder.client2);
         facture3 = new Facture(10F,50F,clientSeeder.client3);
-        factureService.add(facture1);
-        factureService.add(facture2);
-        factureService.add(facture3);
+        //factureService.add(facture1);
+        //factureService.add(facture2);
+        //factureService.add(facture3);
 
     }
 }

@@ -33,7 +33,7 @@ public class SeedByOrder {
         stockSeeder.seed();
         rayonSeeder.seed();
         produitSeeder.seed();
-        fournisseurSeeder.seed();
+        //fournisseurSeeder.seed();
         detailFactureSeeder.seed();
     }
 }

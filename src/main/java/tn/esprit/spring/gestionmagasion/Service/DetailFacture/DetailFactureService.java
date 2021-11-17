@@ -8,8 +8,8 @@ import java.util.List;
 @Service
 public interface DetailFactureService {
     DetailFacture add(DetailFacture detailFacture);
-    DetailFacture update(DetailFacture detailFacture, Long id);
+    //DetailFacture update(DetailFacture detailFacture, Long id);
     void delete(long id);
-    List<DetailFacture> findAll();
-    DetailFacture findById(Long id);
+    /*List<DetailFacture> findAll();
+    DetailFacture findById(Long id);*/
 }

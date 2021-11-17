@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/Facture/")
+@RequestMapping("/facture/")
 @Api(tags = "Facture management")
 public class FactureController {
     @Autowired
@@ -21,8 +21,8 @@ public class FactureController {
 
     @ApiOperation(value = "Ajouter Facture")
     @PostMapping("add")
-    public Facture add(@RequestBody Facture facture){
-        return factureService.add(facture);
+    public Facture add(@RequestBody Facture facture, Long idClient){
+        return factureService.add(facture,idClient);
     }
     @ApiOperation(value = "Mettre a jour un Facture")
     @PutMapping("update/{id}")
